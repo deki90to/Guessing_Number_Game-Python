@@ -1,20 +1,19 @@
 import random
 
-input_num = int(input('Enter lucky num: '))
-randomNum = random.randrange(10)
-print(randomNum)
+guess_number = int(input('Enter secret number: '))
+random_number = random.randrange(10)
 guesses = 0
 
 while True:
-	if input_num == randomNum:
-		print('Num Guessed! ')
-		print(f'Guesses left {3 - guesses}')
+	if guess_number == random_number:
+		print(f'Number {random_number} Guessed! ')
+		print(f'Guesses Left = {3 - guesses}')
 		break
 	else:
-		print('Wrong Guess, Try Again: ')
-		input_num = int(input('Enter lucky num: '))
 		guesses = guesses + 1
-		print(guesses)
+		print(f'{4 - guesses} Guesses Left.')
+		guess_number = int(input('Wrong Guess, Try Again: '))
+
 		if guesses == 3:
-			print('No More Guesses. Run Program Again')
+			print('No More Guesses. Run Program Again.')
 			break
